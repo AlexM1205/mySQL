@@ -1,0 +1,16 @@
+import mysql.connector as mc
+
+conn = mc.connect( host='localhost', user='root', password='messigoated',database='')
+
+c = conn.cursor()
+
+def show_databases():
+    c.execute("SHOW DATABASES")
+    databases = c.fetchall()
+    for databass in databases:
+        print(databass)
+
+def main():
+    show_databases()
+
+main()
